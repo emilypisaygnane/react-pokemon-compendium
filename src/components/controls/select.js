@@ -1,12 +1,14 @@
-export default function Select({ options, changeHandler }) {
+export default function Select({ types, setSelectedType, selectedType }) {
+  console.log(types);
   return (
-    <select onChange={(e) => changeHandler(e.target.value)}>
-      <option value="all">all</option>
-      {options.map((opt) => (
+    <select value={ selectedType } onChange={(e) => setSelectedType(e.target.value)}>
+      <option value="all"> all </option>
+      {types.map((opt) => (
         <option key={opt} value={opt}>
           {opt}
         </option>
       ))}
     </select>
+    
   );
 }

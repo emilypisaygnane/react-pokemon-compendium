@@ -33,5 +33,5 @@ export function usePokemon() {
     loadTypes();
   }, []);
 
-  return { loading, pokemon, error, types, setSelectedType };
+  return { loading, pokemon, error, types, selectedType, setSelectedType };
 }

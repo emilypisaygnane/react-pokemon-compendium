@@ -3,23 +3,33 @@ import { usePokemon } from '../../hooks/usePokemon.js';
 import Select from '../controls/Select';
 
 export default function Compendium() {
-  const { loading, pokemon, error, types, setSelectedType } = usePokemon();
+  const { 
+    loading, 
+    pokemon, 
+    error, 
+    types,
+    selectedType,
+    setSelectedType
+  } = usePokemon();
+ 
   if (loading) 
     return <div className="loader"></div>;
+ 
   return (
-    <div>
+    <>
       <p>{error}</p>
-      
-      <Select options={types} changeHandler={setSelectedType} />
+      <Select types={types} selectedType={selectedType} setSelectedType={setSelectedType} />
+      <main>
+        {pokemon.map((poke) => (
+          <div key={poke.id}>
+            <h1 className='Name'>{poke.pokemon}</h1>
+            <h3 className='Type1'>{poke.type_1}</h3>
+            <h3 className='Type2'>{poke.type_2}</h3>
+            <img className='Images' src={poke.url_image} alt={poke.poke} />
 
-      {pokemon.map((poke) => (
-        <div key={poke}>
-          <h1>{poke.pokemon}</h1>
-          <h3>{poke.type_1}</h3>
-          <h3>{poke.type_2}</h3>
-
-        </div>
-      ))}
-    </div>
+          </div>
+        ))}
+      </main>
+    </>
   );
 }

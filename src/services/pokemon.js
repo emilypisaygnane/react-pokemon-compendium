@@ -4,7 +4,7 @@ export async function fetchPokemon(selectedType) {
     params.set('type', selectedType);
   }
 
-  const resp = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex`);
+  const resp = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?${params.toString()}`);
   const data = await resp.json();
   return data.results;
 }
