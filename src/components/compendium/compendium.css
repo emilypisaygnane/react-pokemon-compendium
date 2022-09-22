@@ -1,28 +1,73 @@
-.loader {
-    border: 24px solid #FFF;
-    border-color: #FF3D00 #FF3D00 #fff #fff;
-    border-radius: 50%;
-    position: relative;
-    animation: rotate 1s linear infinite
-  }
+html, body {
+  height: 100%;
+}
 
-  .loader:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translate(-50% , -125%);
-      left: 50%;
-      width: 12px;
-      height: 12px;
-      background: #fff;
-      border-radius: 50%;
-    }
-  @keyframes rotate {
-    100%   { transform: rotate(360deg)}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50% );
+  border-radius: 50%;
+  border: 8px solid black;
+  animation: spin 1s linear infinite;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 100px;
+  background: black;
+  top: 50px;
+  transform: translate(-50%);
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  background: white;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white, inset 0 0 0 12px black;
+
+}
+
+/* Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
   main {
     height: 90vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
+    justify-content: center;
+    
+}
+
+.poke {
+    color: black;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #e8ded5c6;
+    border: 2px rgba(255, 255, 255, 0.49) solid;
+}

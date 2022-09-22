@@ -8,6 +8,7 @@ export function usePokemon() {
   const [selectedType, setSelectedType] = useState('fairy');
   const [types, setTypes] = useState([]);
 
+
   useEffect(() => {
     const loadData = async () => {
       try {

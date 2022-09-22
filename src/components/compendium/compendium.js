@@ -11,6 +11,7 @@ export default function Compendium() {
     selectedType,
     setSelectedType
   } = usePokemon();
+  
  
   if (loading) 
     return <div className="loader"></div>;
@@ -19,16 +20,15 @@ export default function Compendium() {
     <>
       <p>{error}</p>
       <Select types={types} selectedType={selectedType} setSelectedType={setSelectedType} />
-      <main 
-      // style={{ backgroundImage: `url(${background})` }}
-      >
+      <main className='main'>
         {pokemon.map((poke) => (
-          <div key={poke.id}>
+          <div className='poke' key={poke.id}>
             <h1 className='Name'>{poke.pokemon}</h1>
-            <h3 className='Type1'>{poke.type_1}</h3>
-            <h3 className='Type2'>{poke.type_2}</h3>
             <img className='Images' src={poke.url_image} alt={poke.poke} />
-
+            <h3>type(s): {poke.type_1}</h3>
+            {poke.type_2 !== 'NA' && <h3>{poke.type_2}</h3>}
+            <h3>hp: {poke.hp}</h3>
+            <h3>gen id: {poke.generation_id}</h3>
           </div>
         ))}
       </main>
