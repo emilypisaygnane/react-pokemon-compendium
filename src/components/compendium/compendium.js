@@ -19,7 +19,9 @@ export default function Compendium() {
     <>
       <p>{error}</p>
       <Select types={types} selectedType={selectedType} setSelectedType={setSelectedType} />
-      <main>
+      <main 
+      // style={{ backgroundImage: `url(${background})` }}
+      >
         {pokemon.map((poke) => (
           <div key={poke.id}>
             <h1 className='Name'>{poke.pokemon}</h1>
