@@ -19,22 +19,22 @@ export default function Compendium() {
     return <div className="loader"></div>;
  
   return (
-    <main className='main'>
+    <>
       <p>{error}</p>
       
-      <div>
-        <Search 
-          search={search} 
-          setSearch={setSearch} 
-          setSelectedType={setSelectedType} />
+      <Search 
+        search={search} 
+        setSearch={setSearch} 
+        setSelectedType={setSelectedType} />
 
-        <Select 
-          types={types} 
-          setSelectedType={setSelectedType}
-          setSearch={setSearch} />
-      </div>
-
-      <div className='pokemon'>
+      <Select 
+        types={types} 
+        setSelectedType={setSelectedType}
+        setSearch={setSearch} />
+    
+      < div className='main'>
+        
+        {/* <div className='pokemon'> */}
         {pokemon.map((poke) => (
           <div className='poke' key={poke.id}>
             <h1 className='Name'>{poke.pokemon}</h1>
@@ -45,7 +45,8 @@ export default function Compendium() {
             <h3>gen id: {poke.generation_id}</h3>
           </div>
         ))}
+        {/* </div> */}
       </div>
-    </main>
+    </>
   );
 }

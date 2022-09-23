@@ -53,20 +53,20 @@ body {
   }
 }
 
-main {
-  padding: 2vh;
-  height: 100vh;
+.main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  
+}
+
+/* .pokemon {
+  display: flex;
+  flex-wrap: wrap;
   overflow: scroll;
   overflow-x: hidden;
   justify-content: center;
+} */
 
-}
 .poke {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     color: black;
     border-radius: 20px;
     margin: 10px;
@@ -78,7 +78,6 @@ main {
 }
 
 img {
-  width: 10vh;
+  width: 15vh;
   padding: 5px;
 }
-
