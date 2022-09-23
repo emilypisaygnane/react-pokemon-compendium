@@ -3,6 +3,6 @@ import './Header.css';
 
 export default function Header() {
   return (
-    <div className='header'>POKEMON</div>
+    <header className='header'>POKEMON</header>
   );
 }

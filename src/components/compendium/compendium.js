@@ -1,6 +1,7 @@
 import './Compendium.css';
 import { usePokemon } from '../../hooks/usePokemon.js';
 import Select from '../controls/Select';
+import Search from '../controls/Search';
 
 export default function Compendium() {
   const { 
@@ -8,8 +9,9 @@ export default function Compendium() {
     pokemon, 
     error, 
     types,
-    selectedType,
-    setSelectedType
+    setSelectedType,
+    search,
+    setSearch,
   } = usePokemon();
   
  
@@ -17,10 +19,22 @@ export default function Compendium() {
     return <div className="loader"></div>;
  
   return (
-    <>
+    <main className='main'>
       <p>{error}</p>
-      <Select types={types} selectedType={selectedType} setSelectedType={setSelectedType} />
-      <main className='main'>
+      
+      <div>
+        <Search 
+          search={search} 
+          setSearch={setSearch} 
+          setSelectedType={setSelectedType} />
+
+        <Select 
+          types={types} 
+          setSelectedType={setSelectedType}
+          setSearch={setSearch} />
+      </div>
+
+      <div className='pokemon'>
         {pokemon.map((poke) => (
           <div className='poke' key={poke.id}>
             <h1 className='Name'>{poke.pokemon}</h1>
@@ -31,7 +45,7 @@ export default function Compendium() {
             <h3>gen id: {poke.generation_id}</h3>
           </div>
         ))}
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

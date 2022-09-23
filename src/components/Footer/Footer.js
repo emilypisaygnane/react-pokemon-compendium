@@ -3,6 +3,6 @@ import './Footer.css';
 
 export default function Footer() {
   return (
-    <div className='footer'>Emily Pisaygnane 2022</div>
+    <footer className='footer'>Emily Pisaygnane 2022</footer>
   );
 }
