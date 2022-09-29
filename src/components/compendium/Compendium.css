@@ -10,7 +10,7 @@ body {
 }
 
 .loader {
-  position: relative;
+  position: center;
   height: 100px;
   width: 100px;
   background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50% );
@@ -57,14 +57,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
-
-/* .pokemon {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: scroll;
-  overflow-x: hidden;
-  justify-content: center;
-} */
 
 .poke {
     color: black;
